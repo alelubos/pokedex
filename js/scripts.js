@@ -32,11 +32,11 @@ document.write("<h1>My selection of Pokemon</h1><ul>");
 
 // Write list of Pokemons
 for (let i = 0; i < pokemonList.length; i++) {
-  let text = `${pokemonList[i].name} (height: ${pokemonList[i].height})`;
+  let text = `<b>${pokemonList[i].name}</b> (height: ${pokemonList[i].height})`;
 
   // Add comment for Big pokemon
   if (pokemonList[i].height > 5) {
-    text += " - Wow, that's big!";
+    text += "<span> - Wow, that's big!</span>";
   }
   document.write(`<li>${text}</li>`);
 }
