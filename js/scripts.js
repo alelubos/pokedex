@@ -25,6 +25,11 @@ let pokemonRepository = (function () {
       height: 0.3,
       types: ["grass", "bug"],
     },
+    {
+      name: "Pikachu",
+      height: 0.4,
+      types: ["ground"],
+    },
   ];
 
   function getAll() {
@@ -39,6 +44,26 @@ let pokemonRepository = (function () {
     }
   }
 
+  function addListItem(pokemon) {
+    // select List & create list item
+    let ul = document.querySelector(".pokemon-list");
+    let listItem = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.addEventListener("click", showDetails);
+    button.classList.add("pokemon-list__item--button");
+
+    // Add item to list
+    listItem.appendChild(button);
+    ul.appendChild(listItem);
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon.target.innerText);
+    console.log(pokemon);
+    pokemon.target.blur();
+  }
+
   function filter(name) {
     let nameLowCase = name.toLowerCase();
     let result = pokemonList.filter(
@@ -50,30 +75,12 @@ let pokemonRepository = (function () {
   return {
     getAll,
     add,
+    addListItem,
     filter,
   };
 })();
 
-pokemonRepository.add({
-  name: "Pikachu",
-  height: 0.4,
-  types: ["ground"],
-});
-
-console.log(pokemonRepository.filter("Pikachu"));
-
-// Write a title and opening tag for Pokemon list
-document.write("<h1>My selection of Pokemon</h1><ul>");
-
 // Create list of Pokemons
 pokemonRepository.getAll().forEach((pokemon) => {
-  // create item text
-  let itemText = `<b>${pokemon.name}</b> (height: ${pokemon.height})`;
-  // add special comment for Big Pokemon
-  if (pokemon.height > 5) itemText += "<span> - Wow, that's big!</span>";
-  // Write item text to document
-  document.write(`<li>${itemText}</li>`);
+  pokemonRepository.addListItem(pokemon);
 });
-
-// Write the list closing tag
-document.write("</ul>");
