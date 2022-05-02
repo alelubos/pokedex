@@ -69,7 +69,6 @@ let pokemonRepository = (function () {
         let types = [];
         details.types.forEach((item) => types.push(item.type.name));
         item.types = types;
-        console.log("Details types: ", types);
       })
       .catch((err) => console.log(err));
   }
