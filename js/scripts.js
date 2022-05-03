@@ -85,7 +85,10 @@ let pokemonRepository = (function () {
 // Create list of Pokemons
 pokemonRepository.loadList().then(() => {
   // Now the data is loaded
-  pokemonRepository.getAll().forEach((pokemon) => {
-    pokemonRepository.addListItem(pokemon);
-  });
+  pokemonRepository
+    .getAll()
+    .sort((a, b) => a.name > b.name)
+    .forEach((pokemon) => {
+      pokemonRepository.addListItem(pokemon);
+    });
 });
