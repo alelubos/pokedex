@@ -34,6 +34,7 @@ h1 {
 .pokemon-list__item--button:hover,
 .pokemon-list__item--button:focus {
   background-color: #278bb9;
+  border-color: hsl(199, 65%, 35%);
   font-weight: 700;
   color: white;
 }
