@@ -10,12 +10,16 @@ body {
 h1 {
   font-size: 2rem;
   line-height: 2.8rem;
-  padding-left: 3rem;
+  padding-left: 1rem;
   text-align: center;
 }
 
+input {
+  max-width: 250px;
+}
+
 .pokemon-list {
-  width: 400px;
+  width: 500px;
   max-width: 80vw;
   list-style-type: none;
   margin: 0 auto;
@@ -25,4 +29,13 @@ h1 {
   display: block;
   width: 75%;
   height: auto;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  input {
+    max-width: 140px;
+  }
 }

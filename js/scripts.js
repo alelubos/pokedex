@@ -1,6 +1,8 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
+  let input = $("input");
+  input.on("input", filterList);
 
   function getAll() {
     return pokemonList;
@@ -16,9 +18,9 @@ let pokemonRepository = (function () {
 
   function addListItem(pokemon) {
     // select List & create list item
-    let ul = document.querySelector(".list-group");
+    let ul = document.querySelector("ul");
     let listItem = document.createElement("li");
-    listItem.classList.add("group-list-item");
+    listItem.classList.add("col-sm-6");
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.addEventListener("click", (event) => {
@@ -90,13 +92,26 @@ let pokemonRepository = (function () {
       .catch((err) => console.log(err));
   }
 
+  function filterList(event) {
+    let inputValue = $("input").val();
+    let list = $("li");
+    list.each(function (i) {
+      let item = $(this);
+      let name = item.text();
+      if (name.startsWith(inputValue)) {
+        item.show();
+      } else {
+        item.hide();
+      }
+    });
+  }
+
   function loadDetails(item) {
     let url = item.detailsUrl;
     return fetch(url)
       .then((res) => res.json())
       .then((details) => {
         //Now we add details to the item
-        console.log(details);
         item.weight = details.weight;
         item.imageUrl = details.sprites.front_default;
         item.svgUrl = details.sprites.other.dream_world.front_default;
@@ -114,6 +129,7 @@ let pokemonRepository = (function () {
     loadList,
     loadDetails,
     addListItem,
+    filterList,
   };
 })();
 
