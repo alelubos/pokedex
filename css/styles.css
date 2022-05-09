@@ -3,7 +3,7 @@ body {
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.6rem;
-  background-color: hsl(51, 100%, 69%);
+  background-color: hsl(51, 100%, 87%);
 }
 
 h1 {
@@ -23,7 +23,7 @@ h1 {
   width: 100%;
   height: 3rem;
   background-color: whitesmoke;
-  border: 3px solid hsl(51, 100%, 55%);
+  border: 3px solid hsl(51, 100%, 50%);
   font-family: inherit;
   font-size: 1.2rem;
   font-weight: 500;
