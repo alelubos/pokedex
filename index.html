@@ -17,9 +17,44 @@
     <title>Pokedex</title>
   </head>
   <body>
-    <div id="modal-container"></div>
-    <h1>Pokedex</h1>
-    <ul class="pokemon-list"></ul>
+    <div class="modal fade show" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Pokemon Name</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Pokemon details go here.</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-dark bg-primary fixed-top">
+      <div class="navbar-brand">
+        <h1>Pokedex</h1>
+      </div>
+    </nav>
+    <br />
+    <ul class="list-group pokemon-list mt-5"></ul>
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polyfill.js"></script>
     <script
