@@ -31,7 +31,7 @@ input {
   height: auto;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   h1 {
     font-size: 1.4rem;
   }
