@@ -5,7 +5,7 @@ body {
   line-height: 1.6rem;
   padding-top: 3rem;
   min-height: 100vh;
-  background: linear-gradient(hsl(214, 25%, 90%), hsl(214, 55%, 78%));
+  background: linear-gradient(#dfe5ec, #a8c3e6);
 }
 
 h1 {
@@ -20,7 +20,7 @@ input {
 }
 
 .bg-yellow {
-  background-color: hsl(55, 90%, 72%);
+  background-color: #f8ed77;
 }
 
 .pokemon-list {
