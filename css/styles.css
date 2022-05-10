@@ -23,6 +23,11 @@ input {
   background-color: #f8ed77;
 }
 
+.btn {
+  font-size: 1.1rem;
+  font-weight: inherit;
+}
+
 .pokemon-list {
   width: 500px;
   max-width: 80vw;
