@@ -1,10 +1,11 @@
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.6rem;
   padding-top: 3rem;
-  background-color: hsl(51, 100%, 87%);
+  min-height: 100vh;
+  background: linear-gradient(hsl(214, 25%, 90%), hsl(214, 55%, 78%));
 }
 
 h1 {
@@ -16,6 +17,10 @@ h1 {
 
 input {
   max-width: 250px;
+}
+
+.bg-yellow {
+  background-color: hsl(55, 90%, 72%);
 }
 
 .pokemon-list {

@@ -28,10 +28,8 @@ let pokemonRepository = (function () {
       event.target.blur();
     });
     //Add classes & attributes to list item
-    button.classList.add('btn');
-    button.classList.add('btn-outline-primary');
-    button.classList.add('btn-block');
-    button.classList.add('m-1');
+    button.classList.add('btn', 'btn-block', 'btn-outline-primary');
+    button.classList.add('m-1', 'bg-yellow');
     button.setAttribute('data-toggle', 'modal');
     button.setAttribute('data-target', '.modal');
 
