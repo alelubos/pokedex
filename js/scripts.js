@@ -1,8 +1,8 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
-  let input = $("input");
-  input.on("input", filterList);
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let input = $('input');
+  input.on('input', filterList);
 
   function getAll() {
     return pokemonList;
@@ -12,28 +12,28 @@ let pokemonRepository = (function () {
     if (pokemon.name && pokemon.detailsUrl) {
       pokemonList.push(pokemon);
     } else {
-      console.log("Pokemon is not correct!");
+      console.log('Pokemon is not correct!');
     }
   }
 
   function addListItem(pokemon) {
     // select List & create list item
-    let ul = document.querySelector("ul");
-    let listItem = document.createElement("li");
-    listItem.classList.add("col-sm-6");
-    let button = document.createElement("button");
+    let ul = document.querySelector('ul');
+    let listItem = document.createElement('li');
+    listItem.classList.add('col-sm-6');
+    let button = document.createElement('button');
     button.innerText = pokemon.name;
-    button.addEventListener("click", (event) => {
+    button.addEventListener('click', (event) => {
       showDetails(pokemon);
       event.target.blur();
     });
     //Add classes & attributes to list item
-    button.classList.add("btn");
-    button.classList.add("btn-outline-primary");
-    button.classList.add("btn-block");
-    button.classList.add("m-1");
-    button.setAttribute("data-toggle", "modal");
-    button.setAttribute("data-target", ".modal");
+    button.classList.add('btn');
+    button.classList.add('btn-outline-primary');
+    button.classList.add('btn-block');
+    button.classList.add('m-1');
+    button.setAttribute('data-toggle', 'modal');
+    button.setAttribute('data-target', '.modal');
 
     // Add item to list
     listItem.appendChild(button);
@@ -49,8 +49,8 @@ let pokemonRepository = (function () {
 
   function showModal(pokemon) {
     // Get Node Elements
-    let modalBody = $(".modal-body");
-    let modalTitle = $(".modal-title");
+    let modalBody = $('.modal-body');
+    let modalTitle = $('.modal-title');
 
     // Clear previous content
     modalTitle.empty();
@@ -62,11 +62,11 @@ let pokemonRepository = (function () {
       `<img class="modal-img mx-auto" src="${pokemon.svgUrl}" alt="Drawing of Pokemon ${pokemon.name}">`
     );
     let pokemonHeight = $(
-      `<p class="ml-5 mt-3 mb-0">Height: ${pokemon.height}</p>`
+      `<p class="ml-4 mt-3 mb-0">Height: ${pokemon.height}</p>`
     );
-    let pokemonWeight = $(`<p class="ml-5 mb-0">Weight: ${pokemon.weight}</p>`);
+    let pokemonWeight = $(`<p class="ml-4 mb-0">Weight: ${pokemon.weight}</p>`);
     let pokemonTypes = $(
-      `<p class="ml-5">Types: ${pokemon.types.join(", ")}</p>`
+      `<p class="ml-4">Types: ${pokemon.types.join(', ')}</p>`
     );
 
     // Append Pokemon Elements
@@ -92,10 +92,10 @@ let pokemonRepository = (function () {
       .catch((err) => console.log(err));
   }
 
-  function filterList(event) {
-    let inputValue = $("input").val();
-    let list = $("li");
-    list.each(function (i) {
+  function filterList() {
+    let inputValue = $('input').val();
+    let list = $('li');
+    list.each(function () {
       let item = $(this);
       let name = item.text();
       if (name.startsWith(inputValue)) {
